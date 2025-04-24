@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クボタのポートフォリオ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fdf6e3;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+    .circle-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    .portfolio-block {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .portfolio-block:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .portfolio-block h5 {
+      display: inline-block;
+      position: relative;
+    }
+    .portfolio-block h5::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -3px;
+      left: 0;
+      background-color: #f7d469;
+      transition: width 0.3s ease;
+    }
+    .portfolio-block:hover h5::after {
+      width: 100%;
+    }
+    .diary-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .diary-img:hover {
+      transform: scale(1.05);
+    }
+    .modal-img {
+      width: 100%;
+      object-fit: cover;
+    }
+    nav {
+      background-color: #e6d3b3; /* 濃いアイボリー調 */
+    }
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+    .section-title {
+      padding-top: 70px;
+      border-bottom: 3px solid #e6d3b3;
+      margin-bottom: 20px;
+    }
+    .section-title h2::before {
+      content: '✨ ';
+    }
+    #about h2::after {
+      content: ' 🧑‍🎓';
+    }
+    #works h2::after {
+      content: ' 💻';
+    }
+    #diary h2::after {
+      content: ' 📷';
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">クボタのポートフォリオ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">自己紹介</a></li>
+          <li class="nav-item"><a class="nav-link" href="#works">今までの成果物</a></li>
+          <li class="nav-item"><a class="nav-link" href="#diary">日常生活</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 pt-5">
+    <!-- 自己紹介 -->
+    <section id="about" class="section-title">
+      <h2>自己紹介</h2>
+      <p>こんにちは　河合ゼミ4年の窪田です。</p>
+    </section>
+
+    <!-- 成果物 -->
+    <section id="works" class="mt-5 section-title">
+      <h2>今までの成果物</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card portfolio-block p-3 shadow-sm" onclick="window.open('https://fanatical-pickle-wrench.glitch.me/', '_blank')">
+            <h5>Kpopの紹介</h5>
+            <p class="mb-0">韓国アイドルを紹介したサイトです。</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card portfolio-block p-3 shadow-sm" onclick="window.open('https://ideamarkets.info/archives/1513', '_blank')">
+            <h5>チャットボット</h5>
+            <p class="mb-0">財務分析をするチャットボットについて。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 日常生活 -->
+<section id="diary" class="mt-5 section-title">
+  <h2>日常生活</h2>
+  <div class="row">
+    <!-- 写真1 -->
+    <div class="col-4 col-md-3 mb-4">
+      <div class="position-relative">
+        <div class="position-absolute bg-light px-1" style="top:0;left:0;font-size:12px;">2025/04/17 名古屋</div>
+        <img src="cake1.jpg" class="diary-img" data-bs-toggle="modal" data-bs-target="#modal1">
+      </div>
+    </div>
+
+    <!-- 写真2 -->
+    <div class="col-4 col-md-3 mb-4">
+      <div class="position-relative">
+        <div class="position-absolute bg-light px-1" style="top:0;left:0;font-size:12px;">2025/04/21 芦屋</div>
+        <img src="cake3.jpg" class="diary-img" data-bs-toggle="modal" data-bs-target="#modal-cake1">
+      </div>
+    </div>
+
+    <div class="col-4 col-md-3 mb-4">
+      <div class="position-relative">
+        <div class="position-absolute bg-light px-1" style="top:0;left:0;font-size:12px;">2024/08/22 フランクフルト</div>
+        <img src="cake4.jpg" class="diary-img" data-bs-toggle="modal" data-bs-target="#modal-cake2">
+      </div>
+    </div>
+
+    <div class="col-4 col-md-3 mb-4">
+      <div class="position-relative">
+        <div class="position-absolute bg-light px-1" style="top:0;left:0;font-size:12px;">2024/08/20 シュトゥットガルト</div>
+        <img src="cake9.jpg" class="diary-img" data-bs-toggle="modal" data-bs-target="#modal-cake3">
+      </div>
+    </div>
+
+    <div class="col-4 col-md-3 mb-4">
+      <div class="position-relative">
+        <div class="position-absolute bg-light px-1" style="top:0;left:0;font-size:12px;">2024/08/11 ハイデルベルク</div>
+        <img src="cake11.jpg" class="diary-img" data-bs-toggle="modal" data-bs-target="#modal-cake4">
+      </div>
+    </div>
+
+    <div class="col-4 col-md-3 mb-4">
+      <div class="position-relative">
+        <div class="position-absolute bg-light px-1" style="top:0;left:0;font-size:12px;">2024/03/28 大阪</div>
+        <img src="cake12.jpg" class="diary-img" data-bs-toggle="modal" data-bs-target="#modal-cake5">
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+  </div>
+
+  <!-- モーダル -->
+  <div class="modal fade" id="modal1" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body d-flex">
+          <img src="cake1.jpg" class="modal-img me-3" style="max-width: 50%;">
+          <p>栄のHARBSで食べたマロンタルト🌰</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-cake1" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body d-flex">
+          <img src="cake3.jpg" class="modal-img me-3" style="max-width: 50%;">
+          <p>兵庫県の芦屋で食べたチーズケーキ🧀奥にあるのがみかんが丸ごと乗ってるみかんケーキ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-cake2" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body d-flex">
+          <img src="cake4.jpg" class="modal-img me-3" style="max-width: 50%;">
+          <p>ドイツで食べたメレンゲケーキ🍰今まで食べたケーキで一番おいしかった✨</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-cake3" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body d-flex">
+          <img src="cake9.jpg" class="modal-img me-3" style="max-width: 50%;">
+          <p>チョコのタルトケーキ🍫　ケーキが激甘なのでコーヒーと一緒だとちょうどいい</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="modal-cake4" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body d-flex">
+          <img src="cake11.jpg" class="modal-img me-3" style="max-width: 50%;">
+          <p>ドイツでベリーのタルトケーキ　ドイツではタルト系のケーキがすごく多い！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="modal-cake5" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body d-flex">
+          <img src="cake12.jpg" class="modal-img me-3" style="max-width: 50%;">
+          <p>大阪のキルフェボンで食べたイチゴのタルト🍓おいしい</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <footer class="footer">
+    <p>&copy; 2025 クボタのポートフォリオ</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
